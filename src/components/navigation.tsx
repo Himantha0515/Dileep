@@ -73,6 +73,23 @@ export function Navigation() {
         </nav>
       </header>
 
+      {/* Mobile Top Bar with Logo */}
+      <header className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 flex items-center px-4 py-2 shadow-sm">
+        <Link href="/" className="flex items-center group" aria-label="D_Lighted Lens Home">
+          <span className="mr-2">
+            <svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="10" width="30" height="20" rx="4" fill="#fff" stroke="#e11d48" strokeWidth="2.5"/>
+              <circle cx="19" cy="20" r="7" fill="#f9fafb" stroke="#e11d48" strokeWidth="2.5"/>
+              <circle cx="19" cy="20" r="3.5" fill="#e11d48"/>
+              <rect x="12" y="6" width="14" height="6" rx="2" fill="#e11d48"/>
+            </svg>
+          </span>
+          <span className="font-serif text-base font-extrabold tracking-tight text-primary-900 dark:text-primary-100 group-hover:text-primary-600 transition-colors">
+            D_Lighted Lens
+          </span>
+        </Link>
+      </header>
+
       {/* Mobile Bottom Navigation */}
       <nav className="fixed md:hidden bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 flex justify-around py-1.5 sm:py-2 shadow-2xl">
         {navigation.map((item, idx) => {
