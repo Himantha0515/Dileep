@@ -43,10 +43,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium">Phone</h3>
                     <a
-                      href="tel:9290083065"
+                      href="tel:9908871025"
                       className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
                     >
-                      9290083065
+                      9908871025
                     </a>
                   </div>
                 </div>
