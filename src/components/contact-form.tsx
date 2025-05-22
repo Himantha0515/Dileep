@@ -34,9 +34,22 @@ export function ContactForm() {
     setSubmitStatus('idle')
 
     try {
-      // Here you would typically send the form data to your backend
-      // For now, we'll just simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      // Construct WhatsApp message
+      const message =
+        `New Photography Inquiry!%0A` +
+        `Name: ${encodeURIComponent(data.name)}%0A` +
+        `Email: ${encodeURIComponent(data.email)}%0A` +
+        (data.phone ? `Phone: ${encodeURIComponent(data.phone)}%0A` : '') +
+        `Event Type: ${encodeURIComponent(data.eventType)}%0A` +
+        (data.eventDate ? `Event Date: ${encodeURIComponent(data.eventDate)}%0A` : '') +
+        `Message: ${encodeURIComponent(data.message)}`
+
+      // WhatsApp URL (international format, no + or dashes)
+      const whatsappUrl = `https://wa.me/919908871025?text=${message}`
+
+      // Open WhatsApp (works for both mobile and web)
+      window.open(whatsappUrl, '_blank')
+
       setSubmitStatus('success')
       reset()
     } catch (error) {
